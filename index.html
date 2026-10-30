@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tiền kế hoạch</title>
+<meta name="description" content="Tổng hợp forecast, tồn kho thành phẩm, tồn kho nguyên vật liệu - phụ gia và cân chỉnh kênh thành bảng tiền kế hoạch và kế hoạch sản xuất.">
+<meta name="theme-color" content="#0B5D4E" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1513" media="(prefers-color-scheme: dark)">
+<!-- Chạy độc lập khi "Thêm vào màn hình chính" -->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Tiền kế hoạch">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="side" aria-label="Điều hướng">
+    <div class="brand">
+      <img src="icons/icon-192.png" alt="" width="36" height="36">
+      <div><b>Tiền kế hoạch</b><small>Chuẩn bị dữ liệu sản xuất</small></div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+  </aside>
+
+  <div class="main-col">
+    <header class="top">
+      <div class="top-in">
+        <div class="top-title">
+          <span class="eyebrow" id="viewEyebrow">Tổng quan</span>
+          <h1 id="viewTitle">Tiền kế hoạch</h1>
+        </div>
+        <div class="top-actions">
+          <label class="period-pick" for="periodSel">
+            <span>Kỳ KH</span>
+            <select id="periodSel"></select>
+          </label>
+          <button class="btn ghost sm" id="installBtn" hidden>Cài app</button>
+        </div>
+      </div>
+    </header>
+    <main id="view" class="view" tabindex="-1"></main>
+  </div>
+</div>
+
+<nav class="tabbar" id="tabbar" aria-label="Điều hướng"></nav>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <h3 id="modalTitle"></h3>
+    <div id="modalBody"></div>
+    <div class="modal-actions">
+      <button class="btn ghost" id="modalCancel">Huỷ</button>
+      <button class="btn" id="modalOk">Đồng ý</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
